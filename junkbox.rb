@@ -3,6 +3,7 @@ class Song
 	attr_writer :duration
 
 	@@plays = 0
+	include Comparable
 
 	def initialize(name, artist, duration)
 		@name = name
@@ -27,6 +28,10 @@ class Song
 
 	def to_s
 		"Song: #{@name} -- #{@artist} (#{@duration})"
+	end
+
+	def <=>(other)
+		self.duration <=> other.duration
 	end
 end
 
@@ -107,9 +112,9 @@ class SongList
 		self		
 	end
 
-	def lookup(aWord)
-		@index.lookup(aWord)	
-	end
+	# def lookup(aWord)
+	# 	@index.lookup(aWord)	
+	# end
 
 	def deleteFirst
 		@songs.shift		
@@ -149,9 +154,9 @@ class WordIndex
 		end
 	end
 
-	def lookup
-		@index[aWord.downcase]
-	end
+	#def lookup
+	#	@index[aWord.downcase]
+	#end
 end
 
 
@@ -197,20 +202,19 @@ puts s1.play
 puts s2.play
 puts s1.play
 puts s2.play
-File.open( "C:/webdevdev/workflow/ruby/123.txt", "r" )
 
 puts SongList.isTooLong(s1)
 puts SongList.isTooLong(s2)
 
 
 songs = SongList.new
-songFile.each do |line|
-  file, length, name, title = line.chomp.split(/\s*\|\s*/)
-  name.squeeze!(" ")
-  mins, secs = length.scan(/\d+/)
-  songs.append Song.new(title, name, mins.to_i*60+secs.to_i)
-end
-puts songs.lookup("Fats")
-puts songs.lookup("ain't")
-puts songs.lookup("RED")
-puts songs.lookup("WoRlD")
+
+#puts songs.lookup("Fats")
+#puts songs.lookup("ain't")
+#puts songs.lookup("RED")
+#puts songs.lookup("WoRlD")
+
+song1 = Song.new("My way", "sinatra", 223)
+song2 = Song.new("Bicylops", "Fleck", 260)
+puts song1 <=> song2
+
