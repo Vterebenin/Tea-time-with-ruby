@@ -15,3 +15,4 @@ puts ba.right_channel
 # a local variable of method volume=;
 # the object attribute never got updated. 
 # Tricky bug to track down by the way haHAa
+
