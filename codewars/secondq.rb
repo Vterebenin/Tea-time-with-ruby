@@ -16,3 +16,7 @@ def unique_in_order(iterable)
 end
 #print unique_in_order('AAAABBBCCDAABBB')
 print unique_in_order([1,2,2,3])
+# bp
+def unique_in_order(iterable)
+  (iterable.is_a?(String) ? iterable.chars : iterable).chunk { |x| x }.map(&:first)
+end

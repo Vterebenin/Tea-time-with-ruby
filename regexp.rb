@@ -2,7 +2,7 @@
 #TRY TO FIGURE OUT WHATS HAPPENING. IT IS SO IMPORTANT!!
 def showRE(a,re)
 	if a =~ re
-		"#{$`}<<#{$&}>>#{$'}"
+		"#{$&}"
 	else
 		"no match"
 	end
