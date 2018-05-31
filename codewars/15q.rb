@@ -20,5 +20,15 @@ def pascalsTriangle(n)
   end
   a
 end
-
-p pascalsTriangle(10)
+time = Time.now
+p pascalsTriangle(20)
+p Time.now - time
+# BP
+def pascalsTriangle(n)
+   (1..n).each_with_object([]) do |i, a|
+     a << (1..i).map { |j| j == 1 ? 1 : (a.last[j-2] + a.last[j-1] rescue 1) }
+   end.flatten
+end
+time = Time.now
+p pascalsTriangle(20)
+p Time.now - time
