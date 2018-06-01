@@ -1,0 +1,1 @@
+system "touch random1.rb"
