@@ -20,7 +20,9 @@ Learning materials from some books and my notes
   * advanced topics
 
 __Basic__:
-Sort - Merge Sort, Insert Sort, Quick Sort, Multiple Mutual Permutations.
+* Sort 
+  * ![Merge Sort](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif) < Merge Sort
+  * Insert Sort, Quick Sort, Multiple Mutual Permutations.
 Multiplication of matrices (It is not necessary to implement, the main thing is to know the algorithm)
 Basic screening algorithms
 Unsigned mathematics, including multiplication and division
